@@ -23,7 +23,10 @@
     "electron": "^17.0.0"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.6",
+    "bootstrap": "^5.2.2",
     "serialport": "^10.3.0",
-    "tableify": "^1.1.1"
+    "tableify": "^1.1.1",
+    "webusb": "^2.2.0"
   }
 }

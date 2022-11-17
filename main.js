@@ -6,12 +6,12 @@ const url = require('url')
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 
+app.commandLine.appendSwitch('--enable-experimental-web-platform-features');
+
 function createWindow() {
     // Create the browser window.
     mainWindow = new BrowserWindow({ 
         autoHideMenuBar: true,
-        width: 400,
-        height: 250,
         backgroundColor: "#2d2d2d",
         webPreferences: {
             nodeIntegration: true, // to allow require
@@ -19,6 +19,39 @@ function createWindow() {
             preload: path.join(__dirname, 'preload.js')
         }
     })
+    //serial 
+    mainWindow.webContents.session.on('select-serial-port', (event, portList, webContents, callback) => {        
+        //Add listeners to handle ports being added or removed before the callback for `select-serial-port`
+        //is called.
+        mainWindow.webContents.session.on('serial-port-added', (event, port) => {
+          console.log('serial-port-added FIRED WITH', port)
+          //Optionally update portList to add the new port
+        })
+      
+        mainWindow.webContents.session.on('serial-port-removed', (event, port) => {
+          console.log('serial-port-removed FIRED WITH', port)
+          //Optionally update portList to remove the port
+        })
+        event.preventDefault()
+        if (portList && portList.length > 0) {
+          callback(portList[0].portId)
+        } else {
+          callback('') //Could not find any matching devices
+        }
+      })
+    
+      mainWindow.webContents.session.setPermissionCheckHandler((webContents, permission, requestingOrigin, details) => {
+        if (permission === 'serial' && details.securityOrigin === 'file:///') {
+          return true
+        }
+      })
+    
+      mainWindow.webContents.session.setDevicePermissionHandler((details) => {
+        if (details.deviceType === 'serial' && details.origin === 'file://') {
+          return true
+        }
+      })
+    //serial
 
     // and load the index.html of the app.
     mainWindow.loadURL(url.format({
@@ -28,7 +61,7 @@ function createWindow() {
     }))
 
     // Open the DevTools.
-    //mainWindow.webContents.openDevTools()
+     mainWindow.webContents.openDevTools()
 
     // Emitted when the window is closed.
     mainWindow.on('closed', function() {
