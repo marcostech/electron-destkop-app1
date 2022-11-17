@@ -1,3 +1,4 @@
+const { auto } = require('@popperjs/core');
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
 const url = require('url')
@@ -11,6 +12,8 @@ app.commandLine.appendSwitch('--enable-experimental-web-platform-features');
 function createWindow() {
     // Create the browser window.
     mainWindow = new BrowserWindow({ 
+        width: 700,
+        height: 700,
         autoHideMenuBar: true,
         backgroundColor: "#2d2d2d",
         webPreferences: {
@@ -40,17 +43,17 @@ function createWindow() {
         }
       })
     
-      mainWindow.webContents.session.setPermissionCheckHandler((webContents, permission, requestingOrigin, details) => {
-        if (permission === 'serial' && details.securityOrigin === 'file:///') {
-          return true
-        }
-      })
-    
-      mainWindow.webContents.session.setDevicePermissionHandler((details) => {
-        if (details.deviceType === 'serial' && details.origin === 'file://') {
-          return true
-        }
-      })
+    mainWindow.webContents.session.setPermissionCheckHandler((webContents, permission, requestingOrigin, details) => {
+      if (permission === 'serial' && details.securityOrigin === 'file:///') {
+        return true
+      }
+    })
+  
+    mainWindow.webContents.session.setDevicePermissionHandler((details) => {
+      if (details.deviceType === 'serial' && details.origin === 'file://') {
+        return true
+      }
+    })
     //serial
 
     // and load the index.html of the app.
@@ -61,7 +64,7 @@ function createWindow() {
     }))
 
     // Open the DevTools.
-     mainWindow.webContents.openDevTools()
+    // mainWindow.webContents.openDevTools()
 
     // Emitted when the window is closed.
     mainWindow.on('closed', function() {
