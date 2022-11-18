@@ -48,11 +48,13 @@
 
 ## Como usar
 
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+Para usar esta aplicação é necessário obedecer ao padrão de transmissão abaixo. Uma vez que o sistema alvo esteja enviando os dados, o Monitor de carga irá receber e processar. Para ter um guia de sistema que utiliza o recurso veja o Sistema MUF800R00 [Github](https://github.com/marcostech/MUF800R00). 
+Este padrão de transmissão foi escrito na linguagem utilizada na plataforma Arduino, portanto pode ser usado em seu projeto sem a adição de outras bibliotecas.
+O baudrate do sistema deve ser 115200.
 
 ```bash
-# Todo pacote de dados deve ser enviado desta forma obedecendo a 
-# separação por CSV ',' e por delimitadores de inico e fim de transmissão
+# Todo pacote de dados deve ser enviado desta forma, obedecendo a 
+# separação por CSV ',' e por delimitadores de inico e fim de transmissão.
 # inico do pacote 
 # '<'
 # ...
@@ -61,6 +63,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 # '>'
 # 'new Line char'
 # fim do pacote
+    Serial.begin(115200); //Manter este baudrate
     Serial.print(F("<"));  
     Serial.print(F(","));
     Serial.print(F("V: "));
@@ -92,7 +95,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 ```
 
 > **Note**
-> If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
+> Se você não estiver usando estas funções para envio de dados na porta Serial basta enviar os dados conforme está descrito no exemplo (<,...Pacote1,Pacote2,...,>'newLineChar'), prestando atenção no 'new Line char' que só deve ser enviado ao final.
 
 
 ## Download
