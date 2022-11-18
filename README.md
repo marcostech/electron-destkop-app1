@@ -18,69 +18,77 @@
   <br>
 </h1>
 
-<h4 align="center">Leitor Serial para uso em conjuto com sistema Arduino usando <a href="http://electron.atom.io" target="_blank">ElectronJS</a>.</h4>
+<h4 align="center">Leitor Serial para uso em conjuto com sistema Arduino usando <a href="http://electronjs.org" target="_blank">ElectronJS</a>.</h4>
 
 <p align="center">
-  <a href="https://badge.fury.io/js/electron-markdownify">
-    <img src="https://badge.fury.io/js/electron-markdownify.svg"
-         alt="Gitter">
-  </a>
-  <a href="https://gitter.im/amitmerchant1990/electron-markdownify"><img src="https://badges.gitter.im/amitmerchant1990/electron-markdownify.svg"></a>
-  <a href="https://saythanks.io/to/bullredeyes@gmail.com">
-      <img src="https://img.shields.io/badge/SayThanks.io-%E2%98%BC-1EAEDB.svg">
-  </a>
-  <a href="https://www.paypal.me/AmitMerchant">
-    <img src="https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&amp;style=flat">
-  </a>
-</p>
-
-<p align="center">
-  <a href="#key-features">Key Features</a> •
-  <a href="#how-to-use">How To Use</a> •
+  <a href="#key-features">Características</a> •
+  <a href="#how-to-use">Como usar</a> •
   <a href="#download">Download</a> •
-  <a href="#credits">Credits</a> •
+  <a href="#credits">Creditos</a> •
   <a href="#related">Related</a> •
   <a href="#license">License</a>
 </p>
 
 ![screenshot](./buildResources/anima.gif)
 
-## Key Features
+## Características
 
-* LivePreview - Make changes, See changes
-  - Instantly see what your Markdown documents look like in HTML as you create them.
-* Sync Scrolling
-  - While you type, LivePreview will automatically scroll to the current location you're editing.
-* GitHub Flavored Markdown  
-* Syntax highlighting
-* [KaTeX](https://khan.github.io/KaTeX/) Support
-* Dark/Light mode
-* Toolbar for basic Markdown formatting
-* Supports multiple cursors
-* Save the Markdown preview as PDF
-* Emoji support in preview :tada:
-* App will keep alive in tray for quick usage
-* Full screen mode
-  - Write distraction free.
-* Cross platform
-  - Windows, macOS and Linux ready.
+* Seletor Porta Com
+  - Veja no menu dropdown as portas disponiveis no computador e seu fabricante.
+* Recebe e exibe o status de carga
+  - Enquanto carrega, o sistema envia os dados e o monitor os recebe e exibe.
+* Recebe e exibe as configuraçõe do modo de carga
+  - Exibe os parâmetros chave do modo atual.
+* Mantêm o fluxo de dados da serial ativo e de forma automática
+* Barra de status de carga animada
+* Compatível com sistemas que utilizam protocolo UART (Ex.: Arduino) 
+* Compatível com sistema Windows x86 e x64, (Builds distintas)
+* Cross platform ready
+  - Necessário build exclusiva do ElectronJS.
 
-## How To Use
+## Como usar
 
 To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
 ```bash
-# Clone this repository
-$ git clone https://github.com/amitmerchant1990/electron-markdownify
-
-# Go into the repository
-$ cd electron-markdownify
-
-# Install dependencies
-$ npm install
-
-# Run the app
-$ npm start
+# Todo pacote de dados deve ser enviado desta forma obedecendo a 
+# separação por CSV ',' e por delimitadores de inico e fim de transmissão
+# inico do pacote 
+# '<'
+# ...
+# 'Pacote'
+# ...
+# '>'
+# 'new Line char'
+# fim do pacote
+    Serial.print(F("<"));  
+    Serial.print(F(","));
+    Serial.print(F("V: "));
+    Serial.print(/* Sua tensão de bateria */);  
+    Serial.print(F(","));
+    Serial.print(F("T: "));
+    Serial.print(/* Seu tempo atual */);  
+    Serial.print(F(","));
+    Serial.print(F("C: "));
+    Serial.print(/* Seu ciclo atual */);  
+    Serial.print(F(","));
+    Serial.print(F("S: "));
+    Serial.print(/* Seu estado atual */);  
+    Serial.print(F(","));
+    Serial.print(F("CFG1: "));
+    Serial.print(/* Sua configuração de tensão minima */);  
+    Serial.print(F(","));
+    Serial.print(F("CFG2: "));
+    Serial.print(/* Sua configuração de tensão máxima */);  
+    Serial.print(F(","));
+    Serial.print(F("CFG3: "));
+    Serial.print(/* Sua configuração de tempo máximo */);  
+    Serial.print(F(","));
+    Serial.print(F("CFG4: "));
+    Serial.print(/* Sua configuração de modo atual */);  
+    Serial.print(F(","));
+    Serial.print(F(">"));
+    Serial.println();
 ```
 
 > **Note**
