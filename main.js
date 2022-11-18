@@ -2,6 +2,7 @@ const { auto } = require('@popperjs/core');
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
 const url = require('url')
+const iconPath = path.join(__dirname, "buildResources", "icon.png");
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -12,6 +13,7 @@ app.commandLine.appendSwitch('--enable-experimental-web-platform-features');
 function createWindow() {
     // Create the browser window.
     mainWindow = new BrowserWindow({ 
+        icon: iconPath,
         width: 700,
         height: 700,
         autoHideMenuBar: true,

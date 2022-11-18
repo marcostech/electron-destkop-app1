@@ -1,14 +1,21 @@
 {
-  "name": "electron-serialport",
+  "name": "monitor-de-carga",
   "version": "1.0.2",
-  "description": "A minimal Electron application with node serialport",
+  "description": "A Electron application with node serialport to read from Arduino compatible board",
   "main": "main.js",
+  "build": {    
+    "files": [
+      "buildResources/*"
+    ]
+  },
   "scripts": {
-    "start": "electron ."
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:serialport/electron-serialport.git"
+    "url": "git@github.com:marcostech/electron-desktop-app1.git"
   },
   "keywords": [
     "Electron",
@@ -17,14 +24,20 @@
     "tutorial",
     "demo"
   ],
-  "author": "GitHub",
+  "author": "Marcos Vinicius",
   "license": "CC0-1.0",
   "devDependencies": {
+    "@electron-forge/cli": "^6.0.3",
+    "@electron-forge/maker-deb": "^6.0.3",
+    "@electron-forge/maker-rpm": "^6.0.3",
+    "@electron-forge/maker-squirrel": "^6.0.3",
+    "@electron-forge/maker-zip": "^6.0.3",
     "electron": "^17.0.0"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.2",
+    "electron-squirrel-startup": "^1.0.0",
     "serialport": "^10.3.0",
     "tableify": "^1.1.1",
     "webusb": "^2.2.0"
