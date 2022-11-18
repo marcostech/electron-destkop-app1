@@ -48,7 +48,7 @@
 
 ## Como usar
 
-Para usar esta aplicação é necessário obedecer ao padrão de transmissão abaixo. Uma vez que o sistema alvo esteja enviando os dados, o Monitor de carga irá receber e processar. Para ter um guia de sistema que utiliza o recurso veja o Sistema MUF800R00 [Github](https://github.com/marcostech/MUF800R00). 
+Para usar esta aplicação é necessário obedecer ao padrão de transmissão abaixo. Uma vez que o sistema alvo esteja enviando os dados, o Monitor de carga irá receber e processar. Para ter um guia de sistema que utiliza o recurso veja o Sistema MUF800R00 [Github](https://github.com/marcostech/Projetos_Sistemas_Embarcados). 
 Este padrão de transmissão foi escrito na linguagem utilizada na plataforma Arduino, portanto pode ser usado em seu projeto sem a adição de outras bibliotecas.
 O baudrate do sistema deve ser 115200.
 
