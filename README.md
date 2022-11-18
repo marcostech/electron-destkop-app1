@@ -12,7 +12,7 @@
 
 <h1 align="center">
   <br>
-  <a href="#"><img src="./buildResources/icon.png" alt="Monitor de Carga" width="200"></a>
+  <a href="#"><img src="./buildResources/battery.png" alt="Monitor de Carga" width="200"></a>
   <br>
   Monitor de carga
   <br>
