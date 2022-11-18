@@ -14,11 +14,11 @@
   <br>
   <a href="#"><img src="./buildResources/battery.png" alt="Monitor de Carga" width="200"></a>
   <br>
-  Monitor de carga
+  Monitor de carga V0
   <br>
 </h1>
 
-<h4 align="center">A minimal Markdown Editor desktop app built on top of <a href="http://electron.atom.io" target="_blank">Electron</a>.</h4>
+<h4 align="center">Leitor Serial para uso em conjuto com sistema Arduino usando <a href="http://electron.atom.io" target="_blank">ElectronJS</a>.</h4>
 
 <p align="center">
   <a href="https://badge.fury.io/js/electron-markdownify">
@@ -43,7 +43,7 @@
   <a href="#license">License</a>
 </p>
 
-![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif)
+![screenshot](./buildResources/anima.gif)
 
 ## Key Features
 
