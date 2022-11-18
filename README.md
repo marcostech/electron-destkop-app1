@@ -94,7 +94,7 @@ O baudrate do sistema deve ser 115200.
     Serial.println();
 ```
 
-> **Note**
+> **Nota**
 > Se você não estiver usando estas funções para envio de dados na porta Serial basta enviar os dados conforme está descrito no exemplo (<,...Pacote1,Pacote2,...,>'newLineChar'), prestando atenção no 'new Line char' que só deve ser enviado ao final.
 
 
