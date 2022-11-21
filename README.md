@@ -98,52 +98,23 @@ O baudrate do sistema deve ser 115200.
 > Se você não estiver usando estas funções para envio de dados na porta Serial basta enviar os dados conforme está descrito no exemplo (<,...Pacote1,Pacote2,...,>'newLineChar'), prestando atenção no 'new Line char' que só deve ser enviado ao final.
 
 
-## Download
+## Clone e Build
 
-You can [download](https://github.com/amitmerchant1990/electron-markdownify/releases/tag/v1.2.0) the latest installable version of Markdownify for Windows, macOS and Linux.
-
-## Emailware
-
-Markdownify is an [emailware](https://en.wiktionary.org/wiki/emailware). Meaning, if you liked using this app or it has helped you in any way, I'd like you send me an email at <bullredeyes@gmail.com> about anything you'd want to say about this software. I'd really appreciate it!
+Você deve fazer o clone do projeto e então sua build para a plataforma alvo(Windows x86/64).Em caso de duvidas veja o guia de build do ElectronJS. [Guia](https://www.electronjs.org/docs/latest/tutorial/tutorial-packaging).
+>**Nota**
+> Para definir a arquitetura da build você pode passar o comando make com argumentos.
+```bash
+/*Windows 32bits*/
+npm run make -- --arch=ia32
+/*Windows 64bits*/
+npm run make -- --arch=x64
+```
 
 ## Credits
 
-This software uses the following open source packages:
+Esse Software utiliza os pacotes Open Source abaixo:
 
-- [Electron](http://electron.atom.io/)
-- [Node.js](https://nodejs.org/)
-- [Marked - a markdown parser](https://github.com/chjj/marked)
-- [showdown](http://showdownjs.github.io/showdown/)
-- [CodeMirror](http://codemirror.net/)
-- Emojis are taken from [here](https://github.com/arvida/emoji-cheat-sheet.com)
-- [highlight.js](https://highlightjs.org/)
-
-## Related
-
-[markdownify-web](https://github.com/amitmerchant1990/markdownify-web) - Web version of Markdownify
-
-## Support
-
-<a href="https://www.buymeacoffee.com/5Zn8Xh3l9" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/purple_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
-
-<p>Or</p> 
-
-<a href="https://www.patreon.com/amitmerchant">
-	<img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
-</a>
-
-## You may also like...
-
-- [Pomolectron](https://github.com/amitmerchant1990/pomolectron) - A pomodoro app
-- [Correo](https://github.com/amitmerchant1990/correo) - A menubar/taskbar Gmail App for Windows and macOS
-
-## License
-
-MIT
-
----
-
-> [amitmerchant.com](https://www.amitmerchant.com) &nbsp;&middot;&nbsp;
-> GitHub [@amitmerchant1990](https://github.com/amitmerchant1990) &nbsp;&middot;&nbsp;
-> Twitter [@amit_merchant](https://twitter.com/amit_merchant)
-
+- [Electron](http://electronjs.org/)
+- [Node.js](https://nodejs.org/en)
+- [NodeSerial](https://serialport.io/)
+- [Arduino](https://www.arduino.cc/)
