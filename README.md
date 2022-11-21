@@ -11,10 +11,8 @@
 <p align="center">
   <a href="#key-features">Características</a> •
   <a href="#how-to-use">Como usar</a> •
-  <a href="#download">Download</a> •
+  <a href="#download">Clone e build</a> •
   <a href="#credits">Creditos</a> •
-  <a href="#related">Related</a> •
-  <a href="#license">License</a>
 </p>
 
 ![screenshot](./buildResources/anima.gif)
@@ -40,7 +38,7 @@ Para usar esta aplicação é necessário obedecer ao padrão de transmissão ab
 Este padrão de transmissão foi escrito na linguagem utilizada na plataforma Arduino, portanto pode ser usado em seu projeto sem a adição de outras bibliotecas.
 O baudrate do sistema deve ser 115200.
 
-```bash
+```cpp
 # Todo pacote de dados deve ser enviado desta forma, obedecendo a 
 # separação por CSV ',' e por delimitadores de inico e fim de transmissão.
 # inico do pacote 
@@ -98,7 +96,7 @@ npm run make -- --arch=ia32
 npm run make -- --arch=x64
 ```
 
-## Credits
+## Creditos
 
 Esse Software utiliza os pacotes Open Source abaixo:
 
