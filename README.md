@@ -38,7 +38,7 @@ Para usar esta aplicação é necessário obedecer ao padrão de transmissão ab
 Este padrão de transmissão foi escrito na linguagem utilizada na plataforma Arduino, portanto pode ser usado em seu projeto sem a adição de outras bibliotecas.
 O baudrate do sistema deve ser 115200.
 
-```c++
+```ino
 # Todo pacote de dados deve ser enviado desta forma, obedecendo a 
 # separação por CSV ',' e por delimitadores de inico e fim de transmissão.
 # inico do pacote 
