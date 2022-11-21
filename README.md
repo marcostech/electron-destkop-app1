@@ -104,9 +104,9 @@ Você deve fazer o clone do projeto e então sua build para a plataforma alvo(Wi
 >**Nota**
 > Para definir a arquitetura da build você pode passar o comando make com argumentos.
 ```bash
-/*Windows 32bits*/
+#Windows 32bits
 npm run make -- --arch=ia32
-/*Windows 64bits*/
+#Windows 64bits
 npm run make -- --arch=x64
 ```
 
