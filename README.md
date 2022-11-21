@@ -39,16 +39,16 @@ Este padrão de transmissão foi escrito na linguagem utilizada na plataforma Ar
 O baudrate do sistema deve ser 115200.
 
 ```
-# Todo pacote de dados deve ser enviado desta forma, obedecendo a 
-# separação por CSV ',' e por delimitadores de inico e fim de transmissão.
-# inico do pacote 
-# '<'
-# ...
-# 'Pacote'
-# ...
-# '>'
-# 'new Line char'
-# fim do pacote
+// Todo pacote de dados deve ser enviado desta forma, obedecendo a 
+// separação por CSV ',' e por delimitadores de inico e fim de transmissão.
+// inico do pacote 
+// '<'
+// ...
+// 'Pacote'
+// ...
+// '>'
+// 'new Line char'
+// fim do pacote
     Serial.begin(115200); //Manter este baudrate
     Serial.print(F("<"));  
     Serial.print(F(","));
